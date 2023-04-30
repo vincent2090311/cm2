@@ -1,0 +1,26 @@
+<?php
+/* @var $block \Fuutur\CampaignMonitor\Block\Adminhtml\Config\ListDetails */
+?>
+
+<?php
+$listDetails = $block->getSelectedListDetails();
+?>
+
+<?php if ($listDetails): ?>
+    <table class="data-grid admin__control-table" data-role="grid">
+        <thead>
+            <tr>
+                <th class="data-grid-th"><?= $escaper->escapeHtml(__('Label')) ?></th>
+                <th class="data-grid-th"><?= $escaper->escapeHtml(__('Value')) ?></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($listDetails as $label => $value): ?>
+            <tr class="data-row">
+                <td><?= $escaper->escapeHtml($label) ?></td>
+                <td class="data-grid-actions-cell"><?= $escaper->escapeHtml($value) ?></td>
+            </tr>
+        <?php endforeach ?>
+        </tbody>
+    </table>
+<?php endif ?>

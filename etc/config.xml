@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <createsend_general>
+            <info>
+                <version>2.0.0</version>
+                <api_version>3.3</api_version>
+            </info>
+        </createsend_general>
+    </default>
+</config>

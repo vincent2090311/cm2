@@ -1,0 +1,42 @@
+<?php
+/* @var $block \Fuutur\CampaignMonitor\Block\Adminhtml\Config\TestApi */
+?>
+
+<script>
+    require([
+        'jquery'
+    ], function($){
+        let cmindicator = $('#campaignmonitor_span');
+        $('#test_api').on('click', function () {
+            cmindicator.find('.processing').show();
+            $('#collect_message_span').text('');
+            $.ajax({
+                url: '<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>',
+                dataType: 'json',
+                data: {form_key: window.FORM_KEY},
+                type:'POST',
+                success: function(response) {
+                    cmindicator.find('.processing').hide();
+                    let messages =
+                        '<div class="message message-'+response.status+' '+response.status+'">' +
+                            response.message +
+                        '</div>';
+                    cmindicator.find('.messages').html(messages).show();
+                    setTimeout(function() {
+                        cmindicator.find('.messages').hide()
+                    }, 5000);
+                }
+            });
+        });
+    });
+</script>
+
+<?= /* @noEscape */ $block->getButtonHtml() ?>
+<span class="collect-indicator" id="campaignmonitor_span">
+    <img class="processing"
+         hidden="hidden"
+         alt="Collecting"
+         style="margin:0 5px"
+         src="<?= $escaper->escapeUrl($block->getViewFileUrl('images/process_spinner.gif')) ?>"/>
+    <div class="messages" style="display: none;"></div>
+</span>

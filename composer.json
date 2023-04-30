@@ -1,0 +1,25 @@
+{
+    "name": "fuutur/module-campaignmonitor",
+    "description": "Module campaignmonitor for Magento2",
+    "type": "magento2-module",
+    "version": "2.0.0",
+    "require": {
+        "php": ">=7.4.0",
+        "campaignmonitor/createsend-php": "^7.0"
+    },
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "vincent2090311",
+            "email": "vincent2090311@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Fuutur\\CampaignMonitor\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

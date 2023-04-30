@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="newsletter_subscriber_save_after">
+        <observer name="campaignmonitor_update_subscribe_status"
+                  instance="Fuutur\CampaignMonitor\Observer\UpdateSubscribeStatus"/>
+    </event>
+    <event name="newsletter_subscriber_delete_after">
+        <observer name="campaignmonitor_delete_subscriber"
+                  instance="Fuutur\CampaignMonitor\Observer\DeleteSubscriber"/>
+    </event>
+</config>
