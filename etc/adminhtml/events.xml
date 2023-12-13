@@ -2,10 +2,10 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="admin_system_config_changed_section_createsend_general">
         <observer name="campaignmonitor_update_custom_field"
-                  instance="Fuutur\CampaignMonitor\Observer\SyncCustomFields"/>
+                  instance="Fuutur\CampaignMonitor\Observer\Adminhtml\SyncCustomFields"/>
     </event>
     <event name="customer_delete_after">
         <observer name="campaignmonitor_customer_deleted"
-                  instance="Fuutur\CampaignMonitor\Observer\DeleteCustomer"/>
+                  instance="Fuutur\CampaignMonitor\Observer\Adminhtml\DeleteCustomer"/>
     </event>
 </config>
