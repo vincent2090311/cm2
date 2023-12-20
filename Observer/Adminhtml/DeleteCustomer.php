@@ -25,7 +25,7 @@ class DeleteCustomer implements ObserverInterface
     public function execute(Observer $observer)
     {
         $customer = $observer->getEvent()->getCustomer();
-        $this->apiFactory->unsubscribe(
+        $this->api->unsubscribe(
             $customer->getEmail(),
             $customer->getStoreId()
         );
