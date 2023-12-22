@@ -2,7 +2,7 @@
     "name": "fuutur/module-campaignmonitor",
     "description": "Module campaignmonitor for Magento2",
     "type": "magento2-module",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "require": {
         "php": ">=7.4.0",
         "campaignmonitor/createsend-php": "^7.0"
